@@ -18,7 +18,7 @@ const client = new BedrockAgentRuntimeClient({
 });
 
 const agentId = "GBANRDBZ8F";
-const agentAliasId = "IEXHF31JH9";
+const agentAliasId = "8KP5IYOSDJ";
 
 app.use(cors());
 

@@ -3,15 +3,14 @@ import "./App.css";
 import Markdown from "markdown-to-jsx";
 import axios from "axios";
 import { v4 as uuidv4 } from "uuid";
+const sessionId = uuidv4();
 
 function App() {
   const [prompt, setPrompt] = useState("");
   const [conversation, setConversation] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
-  const [currentSession, setCurrentSession] = useState();
 
   const onPrompt = async () => {
-    const sessionId = uuidv4();
     if (!prompt) return;
     setIsLoading(true);
     axios({
@@ -20,8 +19,6 @@ function App() {
       data: { userInput: prompt, sessionId },
       headers: { "Referrer-Policy": "no-referrer" },
     }).then(res => {
-      console.log(res);
-      setCurrentSession(res.data.conversation);
       setConversation(prev => {
         return [
           ...prev,
