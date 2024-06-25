@@ -102,7 +102,7 @@ function App() {
                         }}
                       >
                         <a
-                          href={ref}
+                          href={ref.url}
                           style={{
                             textOverflow: "ellipsis",
                             fontSize: "12px",
@@ -112,7 +112,7 @@ function App() {
                           target="_blank"
                         >
                           <span>[{i + 1}] </span>
-                          {ref}
+                          {ref.fileName}
                         </a>
                       </div>
                     );
