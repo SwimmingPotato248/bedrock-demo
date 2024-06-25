@@ -53,7 +53,7 @@ function App() {
           border: "1px solid gray",
         }}
       >
-        <button onClick={() => setConversation([])}>Reset</button>
+        <button onClick={() => setConversation([])}>Xóa lịch sử</button>
 
         <div
           style={{
@@ -158,7 +158,7 @@ function App() {
                 fontSize: "24px",
                 padding: "4px 12px",
               }}
-              placeholder="Enter prompt here"
+              placeholder="Nhập nội dung chat"
               value={prompt}
               onChange={e => setPrompt(e.target.value)}
             />
