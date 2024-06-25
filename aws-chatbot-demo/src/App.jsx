@@ -5,6 +5,8 @@ import axios from "axios";
 import { v4 as uuidv4 } from "uuid";
 const sessionId = uuidv4();
 
+import Logo from "./assets/logo_osam.png";
+
 function App() {
   const [prompt, setPrompt] = useState("");
   const [conversation, setConversation] = useState([]);
@@ -39,6 +41,7 @@ function App() {
   };
   return (
     <>
+      <img src={Logo} alt="" />
       <div
         style={{
           maxWidth: "1600px",
