@@ -8,8 +8,17 @@ const {
   BedrockAgentRuntimeClient,
   InvokeAgentCommand,
 } = require("@aws-sdk/client-bedrock-agent-runtime");
+const { S3Client } = require("@aws-sdk/client-s3");
 
-const client = new BedrockAgentRuntimeClient({
+const bedrockClient = new BedrockAgentRuntimeClient({
+  region: "us-west-2",
+  credentials: {
+    accessKeyId: "AKIAW3MECDGYG27M674G",
+    secretAccessKey: "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",
+  },
+});
+
+const s3Client = new S3Client({
   region: "us-west-2",
   credentials: {
     accessKeyId: "AKIAW3MECDGYG27M674G",
@@ -18,7 +27,7 @@ const client = new BedrockAgentRuntimeClient({
 });
 
 const agentId = "GBANRDBZ8F";
-const agentAliasId = "8KP5IYOSDJ";
+const agentAliasId = "N9PKSMG5FK";
 
 app.use(cors());
 
@@ -39,7 +48,7 @@ app.post("/", async (req, res) => {
   try {
     let completion = "";
     let references = [];
-    const response = await client.send(command);
+    const response = await bedrockClient.send(command);
 
     if (response.completion === undefined) {
       throw new Error("Completion is undefiend");
