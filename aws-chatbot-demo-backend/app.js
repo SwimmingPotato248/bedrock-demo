@@ -27,7 +27,7 @@ const s3Client = new S3Client({
 });
 
 const agentId = "GBANRDBZ8F";
-const agentAliasId = "N9PKSMG5FK";
+const agentAliasId = "1DEGBLNAA1";
 
 app.use(cors());
 
