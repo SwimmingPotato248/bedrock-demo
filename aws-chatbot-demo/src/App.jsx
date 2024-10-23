@@ -27,7 +27,7 @@ function App() {
           {
             message: "reply",
             content: res.data.completion,
-            references: res.data.references,
+            // references: res.data.references,
           },
         ];
       });
